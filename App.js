@@ -3,8 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { AppRegistry } from "react-native";
-import ClassDetailsScreen from "../screens/class-details.screen";
 import MainScreen from "./src/screens/main.screen";
+import ClassDetailsScreen from "./src/screens/class-details.screen";
+import B2bLoginScreen from "./src/auth/b2b.login.screen";
 const firebaseConfig = {
   apiKey: "AIzaSyBeFzayi_niCDY3WqBXZYqR_Pyk0osl868",
   authDomain: "customer-management-6f127.firebaseapp.com",
@@ -24,6 +25,7 @@ function App() {
       <Stack.Navigator initialRouteName="Main">
         <Stack.Screen name="Main" component={MainScreen} />
         <Stack.Screen name="ClassDetails" component={ClassDetailsScreen} />
+        <Stack.Screen name="Login" component={B2bLoginScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

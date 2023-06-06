@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import B2bLoginScreen from "../auth/b2b.login.screen";
-import MainStackScreen from "../navigation/main.navigator";
 import HomeScreen from "./home.screen";
 import MembershipsScreen from "./memberships.screen";
 import MyPageScreen from "./my-page.screen";
@@ -50,12 +49,11 @@ export default function MainScreen() {
         },
       })}
     >
-      <Tab.Screen name={homeTab} component={HomeScreen} />
-      <Tab.Screen name={classesTab} component={MainStackScreen} />
-      <Tab.Screen name={membershipsTab} component={MembershipsScreen} />
-      <Tab.Screen name={reservationsTab} component={MyReservationsScreen} />
-      <Tab.Screen name={myPageTab} component={MyPageScreen} />
-      <Tab.Screen name="Login" component={B2bLoginScreen} />
+      <Tab.Screen name="Go Fit" component={HomeScreen} />
+      {/*<Tab.Screen name={classesTab} component={MainStackScreen} />*/}
+      <Tab.Screen name="멤버십 구매" component={MembershipsScreen} />
+      <Tab.Screen name="예약현황" component={MyReservationsScreen} />
+      <Tab.Screen name="내 정보" component={MyPageScreen} />
     </Tab.Navigator>
   );
 }

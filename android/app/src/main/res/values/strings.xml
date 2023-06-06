@@ -1,5 +1,5 @@
 <resources>
-  <string name="  ">rn-gofit</string>
+  <string name="app_name">rn-gofit</string>
   <string name="expo_splash_screen_resize_mode" translatable="false">contain</string>
   <string name="expo_splash_screen_status_bar_translucent" translatable="false">false</string>
   <string name="kakao_app_key">9d843ba91b90045a55ef0f449df8dc58</string>
