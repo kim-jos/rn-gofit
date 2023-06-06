@@ -1,12 +1,11 @@
 import firestore from "@react-native-firebase/firestore";
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { Button, Text, TouchableOpacity, View } from "react-native";
 import { Classes } from "../backend/models/classes.model";
 import WebView from "react-native-webview";
 
 export default function HomeScreen() {
   const [classes, setClass] = useState<any>();
-  const webViewRef = useRef(null);
 
   const getClasses = async () => {
     const studios = await firestore().collection("classes").get();
@@ -14,6 +13,9 @@ export default function HomeScreen() {
       studios.docs.map((studio) => ({ ...studio.data(), idx: studio.id }))
     );
   };
+  useEffect(()=>{
+    getClasses();
+  },[])
 
   return (
     <View style={{flex:1}}>
